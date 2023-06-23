@@ -8,12 +8,14 @@ class UserController extends AppController {
     public function __construct()
     {
         $this->pdo = new MyPdo("book");
+        $this->getHeaderLinks();
     }
 
     public function showUsers(){
     
         $books = $this->pdo->query('SELECT * FROM book');
-        $this->render('UserList', $books);
+        $this->render('UserList',[
+            $books]);
     }
 
     public function userDetail() {

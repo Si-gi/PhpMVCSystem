@@ -5,7 +5,7 @@ class HomeController extends AppController{
 
     public function __construct()
     {
-        
+        $this->getHeaderLinks();
     }
 
     public function index(){

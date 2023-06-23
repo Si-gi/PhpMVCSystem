@@ -10,5 +10,8 @@ class AppController extends Controller{
     public function __construct(){
         die(__ROOT__);
         $this->viewPath = __ROOT__. '/templates/';
+        
     }
+
+
 }

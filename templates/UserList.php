@@ -8,7 +8,11 @@
 </thead>
 <tbody>
     <?php foreach($variables as $book) {?>
-        <tr><?php echo $book->id ?></tr>
+        <tr>
+            <td><?php echo $book->id ?></td>
+            <td><?php echo $book->name ?></td>
+            <td><?php echo $book->author ?></td>
+    </tr>
         <?php } ?>
 </tbody>
 </table>

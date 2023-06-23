@@ -8,7 +8,7 @@ class MyPdo {
     private $db_host;
 
     private $pdo;
-    public function __construct($db_name, $db_user='', $db_pass='', $db_host ='localhost')
+    public function __construct($db_name="book", $db_user='', $db_pass='', $db_host ='localhost')
     {
         $this->db_name = $db_name;  
         $this->db_user = $db_user;
@@ -35,5 +35,10 @@ class MyPdo {
         $data = $req->fetchAll(PDO::FETCH_OBJ);
 
         return $data;
+    }
+
+    public function exec($statement){
+        $req = $this->getPdo()->exec($statement);
+        return $req;
     }
 }

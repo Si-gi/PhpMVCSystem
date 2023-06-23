@@ -11,6 +11,9 @@ class Route {
         $this->callable = $callable;
     }
 
+    public function getPath(): string{
+        return $this->path;
+    }
     /**
     * Permettra de capturer l'url avec les paramètre 
     * get('/posts/:slug-:id') par exemple

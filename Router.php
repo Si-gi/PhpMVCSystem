@@ -44,6 +44,18 @@ class Router {
         // throw new RouterException('No matching routes');
     }
 
+    public function export_json($routeFile = "./routes.json"){
+        $paths = json_encode([
+            'routes' => array_map([$this, 'getPaths'], $this->namedRoutes)
+        ]);
+        file_put_contents($routeFile, $paths);
+    }
+
+
+    private function getPaths(Route $route){
+        return $route->getPath();
+    }
+
     public function url($name, $params = []){
         if(!isset($this->namedRoutes[$name])){
             // throw new RouterException('No route matches this name');
